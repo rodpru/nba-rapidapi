@@ -48,7 +48,7 @@ const Teams = () => {
       </div>
       <div>
         <p className="float-right">
-          Página {currentPage} de {totalPages}
+          Page {currentPage} of {totalPages}
         </p>
         <div className="mt-10 flex gap-4">
           <button
