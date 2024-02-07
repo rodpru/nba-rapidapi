@@ -1,5 +1,6 @@
 import axios from "axios";
-import { Team } from "./types";
+import { ResponseTeams, Team } from "./types";
+import { toast } from "react-hot-toast";
 
 const api = axios.create({
   baseURL: "https://free-nba.p.rapidapi.com",
@@ -10,12 +11,15 @@ api.interceptors.request.use((config) => {
   config.headers["x-rapidapi-host"] = "free-nba.p.rapidapi.com";
   config.headers["Accept"] = "application/json";
   config.headers["Content-Type"] = "application/json";
-  config.headers["Accept-Encoding"] = "gzip, deflate";
   return config;
 });
 
 export default api;
-export const getTeams = async (): Promise<Team[]> => {
-  const response = await api.get("/teams");
-  return response.data.data;
+
+export const getTeams = async () => {
+  return await api.get<ResponseTeams>("/teams");
+};
+
+export const getTeamBydId = async (id: string) => {
+  return await api.get<Team>(`/teams/${id}`);
 };

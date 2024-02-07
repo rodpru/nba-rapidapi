@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import Teams from "./Pages/Teams";
 import Layout from "./Pages/Layout";
+import IndividualTeam from "./Pages/IndividualTeam";
 import NoPage from "./Pages/NoPage";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/teams" element={<Teams />} />
+          <Route path="/teams/:id" element={<IndividualTeam />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </Layout>
