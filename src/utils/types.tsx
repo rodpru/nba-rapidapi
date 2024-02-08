@@ -52,3 +52,46 @@ export type StatsList = {
   data: [];
   meta: {};
 };
+
+export type StatType = {
+  id: number;
+  ast: number;
+  blk: number;
+  dreb: number;
+  fg3_pct: number;
+  fg3a: number;
+  fg3m: number;
+  fg_pct: number;
+  fga: number;
+  fgm: number;
+  ft_pct: number;
+  fta: number;
+  ftm: number;
+  game: Game;
+  min: string;
+  oreb: number;
+  pf: number;
+  player: {
+    id: number;
+    first_name: string;
+    height_feet: number;
+    height_inches: number;
+    last_name: string;
+    position: string;
+    team_id: number;
+    weight_pounds: number;
+  };
+  pts: number;
+  reb: number;
+  stl: number;
+  team: {
+    id: number;
+    abbreviation: string;
+    city: string;
+    conference: string;
+    division: string;
+    full_name: string;
+    name: string;
+  };
+  turnover: number;
+};

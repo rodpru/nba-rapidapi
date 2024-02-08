@@ -49,7 +49,26 @@ export const getStatsById = async (id: string) => {
     game_ids: id,
   };
 
-  return await api.get<StatsList>(`/stats/${id}`, { data: params }); // Remove type argument
+  /*   const options = {
+    method: "GET",
+    url: "https://free-nba.p.rapidapi.com/stats",
+    params: {
+      page: "0",
+      per_page: "1",
+      game_ids: id,
+    },
+    headers: {
+      "X-RapidAPI-Key": "c61f3b36d2msh83edb0440160c34p1665d2jsn6fd468336ba6",
+      "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
+    },
+  }; */
+
+  /* https://free-nba.p.rapidapi.com/stats?page=0&per_page=1&game_ids=48766 */
+
+  //return await axios.request<StatsList>(options);
+  return await api.get<StatsList>(`/stats?page=0&per_page=1&game_ids=${id}`, {
+    data: params,
+  }); // Remove type argument
 };
 
 /* const axios = require('axios');
