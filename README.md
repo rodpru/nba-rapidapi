@@ -1,3 +1,10 @@
+# To launch the project run the following commands
+
+- be sure the create and .env file with "REACT_APP_RAPID_API_KEY=(Your API key)"
+
+- npm install
+- npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
